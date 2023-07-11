@@ -1,0 +1,18 @@
+apiVersion: frps.ak1l.de.frps.ak1l.de/v1alpha1
+kind: Upstream
+metadata:
+  labels:
+    app.kubernetes.io/name: upstream
+    app.kubernetes.io/instance: upstream-sample
+    app.kubernetes.io/part-of: k8s-frp-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: k8s-frp-operator
+  name: upstream-sample
+spec:
+  client: client-01
+  tcp:
+    host: nginx-service.webapp.svc.cluster.local
+    port: 80
+    server:
+      port: 8181
+    proxyProtocol: v2

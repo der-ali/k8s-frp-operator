@@ -1,0 +1,19 @@
+apiVersion: frps.ak1l.de.frps.ak1l.de/v1alpha1
+kind: Client
+metadata:
+  labels:
+    app.kubernetes.io/name: client
+    app.kubernetes.io/instance: client-sample
+    app.kubernetes.io/part-of: k8s-frp-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: k8s-frp-operator
+  name: client-sample
+spec:
+  server:
+    host: 94.16.122.171
+    port: 7000
+    authentication:
+      token:
+        secret:
+          name: client-01-secret
+          key: token
